@@ -21,8 +21,8 @@ const AddItem = () => {
   };
 
   return (<div className='border-bottom p-2 bg-dark'>
-      <Form onSubmit={createItem} isCreating={creating}/>
-    </div>);
+    <Form onSubmit={createItem} isCreating={creating}/>
+  </div>);
 };
 
 export default AddItem;

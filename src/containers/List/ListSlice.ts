@@ -16,7 +16,7 @@ interface createItem {
 
 interface UpdateParams {
   id: string;
-  itemParam: ApiToDo;
+  itemParam: toDoItem;
 }
 
 
@@ -39,7 +39,7 @@ export const deleteItem = createAsyncThunk<void, deleteID, { state: RootState }>
 });
 
 export const updateItem = createAsyncThunk<void, UpdateParams, { state: RootState }>('todoList/update', async (arg) => {
-  await axiosApi.put('/todoes/' + arg.id + '.json' + arg.itemParam);
+  await axiosApi.put('/todoes/' + arg.id + '.json', arg.itemParam);
 });
 
 

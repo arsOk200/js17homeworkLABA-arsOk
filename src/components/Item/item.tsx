@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ApiToDo, toDoItem} from "../../type";
+import {toDoItem} from "../../type";
 import {useAppDispatch} from "../../app/hooks";
 import ButtonSpinner from "../Spinner/ButtonSpinner";
 import {fetchItems} from "../../containers/List/ListThunk";
@@ -8,10 +8,10 @@ import {deleteItem} from "../../containers/List/ListSlice";
 interface Props {
   item: toDoItem;
   isDone: boolean;
-  isUpdate: (id: string, item: ApiToDo) => void;
+  isUpdate: (id: string, item: toDoItem) => void;
 }
 
-const Item: React.FC<Props> = ({item, isDone, isUpdate}) => {
+const Item: React.FC<Props> = ({item, isUpdate}) => {
   const dispatch = useAppDispatch();
   const [deleting, setDeleting] = useState(false);
 

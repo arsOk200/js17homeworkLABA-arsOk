@@ -28,7 +28,7 @@ const Form:React.FC<Props> = ({onSubmit, isCreating}) => {
 
   return (
     <form onSubmit={onFormSubmit} className='d-flex flex-column align-items-center mt-3'>
-      <textarea onChange={onTextChange} value={item.text} name='text' placeholder='Your task' className='mb-2' cols={40} rows={7} style={{resize:'none', borderRadius:'10px'}}/>
+      <textarea onChange={onTextChange} required value={item.text} name='text' placeholder='Your task' className='mb-2' cols={40} rows={7} style={{resize:'none', borderRadius:'10px'}}/>
       <button type='submit' className='btn btn-outline-success' disabled={isCreating}>{isCreating && <ButtonSpinner/>}Save</button>
     </form>
   );

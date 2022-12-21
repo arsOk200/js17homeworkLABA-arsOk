@@ -12,6 +12,7 @@ const AddItem = () => {
   const createItem = async (item: ApiToDo) => {
     try {
       setCreating(true);
+
       await dispatch(addNewItem({item}));
 
     } finally {
